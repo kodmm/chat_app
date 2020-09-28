@@ -1,0 +1,17 @@
+<h1>Rooms#show</h1>
+<p>Find me in app/views/rooms/show.html.erb</p>
+<div id="messages">
+    <% @messages.each do |message| %>
+        <%= render :partial => "/layouts/shared/message", :locals => {message: message} %>
+        
+    <% end %>
+    <div id="new_message"></div>
+</div>
+<div>
+    <div>
+        <%= form_with(model: @message) do |form| %>
+            <%= form.text_field :content %>
+            <%= form.submit "送信" %>
+        <% end %> 
+    <div>
+    
